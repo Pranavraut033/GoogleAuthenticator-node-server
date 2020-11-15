@@ -12,6 +12,9 @@
     "lintFull": "eslint \"./**/*.js\"",
     "lintFix": "eslint --fix './**/*.js'"
   },
+  "engines": {
+    "node": ">=10.15.1"
+  },
   "keywords": [
     "Google Authenicator",
     "2fa",

@@ -1,25 +1,16 @@
 import createError from "http-errors";
 import express from "express";
-import { join } from "path";
 import logger from "morgan";
 import { urlencoded, json } from "body-parser";
-// import cors from "cors";
 import compression from "compression";
-// import helmet from "helmet";
 import indexRouter from "./routes/index.js";
 
 const app = express();
 
-// view engine setup
-app.set("views", join(__dirname, "views"));
-app.set("view engine", "jade");
-
 app.use(logger("dev"));
-// app.use(helmet());
 app.use(compression());
 app.use(json());
 app.use(urlencoded({ extended: true }));
-// app.use(cors({ credentials: true, origin: true }));
 
 app.use("/", indexRouter);
 
